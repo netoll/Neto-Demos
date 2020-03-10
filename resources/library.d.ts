@@ -6,6 +6,7 @@ export interface IGithubUser {
 	// path
 	login: string;
 	description?: string;
+	site?: string;
 }
 
 export interface IGithubRepo {

@@ -10,6 +10,7 @@ import {IOpenLibrary} from '../resources/library';
 import {libIds, libraries} from '../resources/libraries';
 import {ViewGalleryOfLibraries} from '../views/ViewGalleryOfLibraries';
 import {LibMuiViewsHome} from '../mui-views/LibMuiViewsHome';
+import {LibVisNetworkHome} from '../vis/LibVisNetworkHome';
 import {RB} from './resources';
 import {useStyles} from './styles';
 
@@ -43,6 +44,8 @@ export const AppHome = React.memo(() => {
 				return <LibMuiLibHome library={lib}/>;
 			case libIds.muiViews:
 				return <LibMuiViewsHome library={lib}/>;
+			case libIds.muiVisNetwork:
+				return <LibVisNetworkHome library={lib}/>;
 			default:
 				return <div>Unsupported Library!</div>;
 		}

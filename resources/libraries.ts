@@ -6,10 +6,16 @@ const userMuiLib: IGithubUser = {
 	id: 59460099, name: 'mui-lib', login: 'mui-lib',
 	description: '',
 };
+const userVisjs: IGithubUser = {
+	id: 6409377, name: 'Vis Network', login: 'visjs',
+	description: 'Dynamic, browser based visualization libraries',
+	site: 'https://visjs.org/',
+};
 
 export const libIds = {
 	muiViews: 'mui-views',
 	muiLib: 'mui-lib',
+	muiVisNetwork: 'vis-network',
 };
 
 export const repo = (owner: string, path: string, stars: number = -1, forks: number = -1): IGithubRepo =>
@@ -32,6 +38,9 @@ const libs: IOpenLibrary[] = [
 		'covering topics of views/pages/routes/animations/transitions/etc, ' +
 		'and designed for commercialized products, ' +
 		'which is also an extended library of the core mui-lib.'),
+	df(libIds.muiVisNetwork, 'Vis Network', userVisjs,
+		repo('visjs', 'vis-network', 583, 95),
+		'Display dynamic, automatically organised, customizable network views.'),
 ];
 
 export const libraries = libs;
