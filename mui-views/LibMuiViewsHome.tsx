@@ -7,7 +7,7 @@ import {AppPageHeader} from 'src/mui-views/app/AppPageHeader';
 import {LayoutAppHeader} from 'src/mui-views/app/LayoutAppHeader';
 import {MuiViewsAppDemos} from './MuiViewsAppDemos';
 import {MuiViewsDataDemos} from './MuiViewsDataDemos';
-import {MenuComponents} from '../pages/MenuComponents';
+import {AppMenuComponents} from '../components/AppMenuComponents';
 import {IOpenLibrary} from '../resources/library';
 import {useStyles} from '../pages/styles';
 import {libMuiViewsMenuPages, libMuiViewsDemoPage, RB} from './resources';
@@ -56,7 +56,7 @@ export const LibMuiViewsHome = React.memo<IProps>(({library}: IProps) => {
 		<LayoutAppHeader
 			title={R.getTitle(library)}
 			body={renderPageBody()}
-			nav={<MenuComponents menus={[libMuiViewsMenuPages]} menuId={compId} onSelect={onSelectedComponent}/>}
+			nav={<AppMenuComponents menus={[libMuiViewsMenuPages]} menuId={compId} onSelect={onSelectedComponent}/>}
 		/>
 	);
 });

@@ -7,7 +7,7 @@ import {AppLanguagesSelector} from 'src/mui-views/app/AppLanguagesSelector';
 import {AppPageHeader} from 'src/mui-views/app/AppPageHeader';
 import {AppPageParagraph} from 'src/mui-views/app/AppPageParagraph';
 import {LayoutAppHeader} from 'src/mui-views/app/LayoutAppHeader';
-import {MenuComponents} from '../pages/MenuComponents';
+import {AppMenuComponents} from '../components/AppMenuComponents';
 import {libMuiViewsMenuPages} from './resources';
 
 export const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -31,7 +31,7 @@ export const MuiViewsAppDemos = React.memo(({}: IProps) => {
 			title={'LayoutAppHeader'}
 			body={renderDemoBody()}
 			nav={
-				<MenuComponents menus={[libMuiViewsMenuPages]} onSelect={(menuId) => console.log('selected', menuId)}/>
+				<AppMenuComponents menus={[libMuiViewsMenuPages]} onSelect={(menuId) => console.log('selected', menuId)}/>
 			}
 		/>
 	);

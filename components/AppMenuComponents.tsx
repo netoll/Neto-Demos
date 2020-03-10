@@ -17,7 +17,7 @@ interface IProps {
 	menuId?: string;
 }
 
-export const MenuComponents = React.memo(({menus, menuId, onSelect}: IProps) => {
+export const AppMenuComponents = React.memo(({menus, menuId, onSelect}: IProps) => {
 	return (
 		<AppSecondaryMenu
 			sections={menus} color='#099'
