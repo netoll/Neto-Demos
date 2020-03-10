@@ -13,7 +13,7 @@ import {libMuiViewsMenuPages} from './resources';
 export const useStyles = makeStyles((theme: Theme) => createStyles({
 	demo: {
 		margin: 16, background: '#fff', borderRadius: 5, padding: 16,
-		position: 'relative', minHeight: 120,
+		minHeight: 360,
 	},
 }));
 
@@ -26,51 +26,29 @@ interface IProps {
 export const MuiViewsAppDemos = React.memo(({}: IProps) => {
 	const cls = useStyles();
 
-	const renderDemo = (id: string, dom: React.ReactElement) => (
-		<div key={id} className={cls.demo}>
-			{dom}
+	const renderDemos = () => (
+		<LayoutAppHeader
+			title={'LayoutAppHeader'}
+			body={renderDemoBody()}
+			nav={
+				<MenuComponents menus={[libMuiViewsMenuPages]} onSelect={(menuId) => console.log('selected', menuId)}/>
+			}
+		/>
+	);
+
+	const renderDemoBody = () => (
+		<div style={{position: 'relative'}}>
+			<AppPageHeader title={'App Page Header'}/>
+			<AppPageHeader secondary title={'App Secondary Header'}/>
+			<AppPageParagraph description={'This is a default description with default styles for a page, to make the initial page more rich.'}/>
+			<AppLanguagesSelector onSetLanguage={(lang: string) => console.log('selected:', lang)}/>
+			<AppActionButton onClick={() => console.log('button is clicked')}/>
+			<AppActionButton icon='edit' onClick={() => console.log('button is clicked')}/>
 		</div>
 	);
-	const renderDemos = () => [
-		renderDemo(
-			'fab',
-			<AppActionButton onClick={() => console.log('button is clicked')}/>,
-		),
-		renderDemo(
-			'AppActionButton2',
-			<AppActionButton icon='edit' onClick={() => console.log('button is clicked')}/>,
-		),
-		renderDemo(
-			'AppLanguagesSelector',
-			<AppLanguagesSelector onSetLanguage={(lang: string) => console.log('selected:', lang)}/>,
-		),
-		renderDemo(
-			'AppPageHeader+AppPageParagraph',
-			<div>
-				<AppPageHeader title={'App Page Header'}/>
-				<AppPageHeader secondary title={'App Secondary Header'}/>
-				<AppPageParagraph description={'This is a default description with default styles for a page, to make the initial page more rich.'}/>
-			</div>,
-		),
-		renderDemo(
-			'MenuComponents',
-			<MenuComponents menus={[libMuiViewsMenuPages]} onSelect={(menuId) => console.log('selected', menuId)}/>,
-		),
-		renderDemo(
-			'LayoutAppHeader',
-			<LayoutAppHeader
-				title={'LayoutAppHeader'}
-				body={() => (
-					<div>
-						This is the app body.
-					</div>
-				)}
-			/>,
-		),
-	];
 
 	return (
-		<div>
+		<div className={cls.demo}>
 			{renderDemos()}
 		</div>
 	);
