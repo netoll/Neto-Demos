@@ -1,7 +1,7 @@
 //
 
 import {newMenuItem, newMenuSection} from 'src/mui-views/app/AppSecondaryMenu';
-import {IOpenLibrary} from '../pages/resources';
+import {IOpenLibrary} from '../resources/library';
 
 const R = {
 	getTitle: (lib?: IOpenLibrary) => lib ? `${lib.name} - Demos` : 'Demos',

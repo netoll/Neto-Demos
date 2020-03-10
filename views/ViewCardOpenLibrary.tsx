@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
-import {IOpenLibrary} from '../pages/resources';
+import {IOpenLibrary} from '../resources/library';
 
 export const useStyles = makeStyles((theme: Theme) => createStyles({
 	root: {

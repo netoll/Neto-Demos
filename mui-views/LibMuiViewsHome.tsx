@@ -8,7 +8,7 @@ import {LayoutAppHeader} from 'src/mui-views/app/LayoutAppHeader';
 import {MuiViewsAppDemos} from './MuiViewsAppDemos';
 import {MuiViewsDataDemos} from './MuiViewsDataDemos';
 import {MenuComponents} from '../pages/MenuComponents';
-import {IOpenLibrary} from '../pages/resources';
+import {IOpenLibrary} from '../resources/library';
 import {useStyles} from '../pages/styles';
 import {libMuiViewsMenuPages, libMuiViewsDemoPage, RB} from './resources';
 

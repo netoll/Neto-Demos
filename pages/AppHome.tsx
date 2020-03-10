@@ -5,9 +5,11 @@ import {useLocalizedResourcesFromContext} from 'src/mui-lib/hooks/useLanguage';
 import {LayoutAppHeader} from 'src/mui-views/app/LayoutAppHeader';
 import {AppPageHeader} from 'src/mui-views/app/AppPageHeader';
 import {AppPageParagraph} from 'src/mui-views/app/AppPageParagraph';
+import {IOpenLibrary} from '../resources/library';
+import {libIds, libraries} from '../resources/libraries';
 import {ViewGalleryOfLibraries} from '../views/ViewGalleryOfLibraries';
 import {LibMuiViewsHome} from '../mui-views/LibMuiViewsHome';
-import {IOpenLibrary, libIds, libraries, RB} from './resources';
+import {RB} from './resources';
 import {useStyles} from './styles';
 
 export const AppHome = React.memo(() => {
