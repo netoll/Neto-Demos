@@ -3,7 +3,7 @@
 import React from 'react';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import IconComponent from '@material-ui/icons/ClosedCaption';
-import {getAppSecondaryMenu, IMenuSection} from 'src/mui-views/app/AppSecondaryMenu';
+import {getAppSecondaryMenu, IMenuItem, IMenuSection} from 'src/mui-views/app/AppSecondaryMenu';
 
 const icon = <ListItemIcon style={{color: '#663399'}}><IconComponent/></ListItemIcon>;
 
@@ -13,7 +13,7 @@ const AppSecondaryMenu = getAppSecondaryMenu();
 
 interface IProps {
 	menus: IMenuSection[];
-	onSelect: (entryId: string) => any;
+	onSelect: (entryId: string, entry: IMenuItem) => any;
 	menuId?: string;
 }
 
