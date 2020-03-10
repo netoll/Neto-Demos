@@ -21,11 +21,11 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
 	owner: {color: '#ccc'},
 	name: {fontSize: 'x-large', color: '#099', fontWeight: 'bold'},
 
-	body: {height: '64px', overflow: 'hidden', background: '#fcfcfc', margin: '2px 0', cursor: 'pointer'},
+	body: {height: '64px', overflow: 'hidden', background: '#fcfcfc', margin: '5px 0', cursor: 'pointer'},
 	description: {color: '#666', wordBreak: 'break-all'},
 
 	tail: {display: 'flex', flexFlow: 'row nowrap'},
-	iconGithub: {cursor: 'pointer'},
+	iconGithub: {color: '#666', cursor: 'pointer'},
 }));
 
 interface IProps {
@@ -62,7 +62,7 @@ export const ViewCardOpenLibrary = React.memo(({lib, onClick}: IProps) => {
 	const renderTail = () => (
 		<div className={cls.tail}>
 			<div style={{flex: 1}}/>
-			<IconGithub className={cls.iconGithub} onClick={goToRepoHome}/>
+			<IconGithub className={cls.iconGithub} onClick={goToRepoHome} fontSize='small'/>
 		</div>
 	);
 
