@@ -5,6 +5,7 @@ import {useLocalizedResourcesFromContext} from 'src/mui-lib/hooks/useLanguage';
 import {LayoutAppHeader} from 'src/mui-views/app/LayoutAppHeader';
 import {AppPageHeader} from 'src/mui-views/app/AppPageHeader';
 import {AppPageParagraph} from 'src/mui-views/app/AppPageParagraph';
+import {LibMuiLibHome} from '../mui-lib/LibMuiLibHome';
 import {IOpenLibrary} from '../resources/library';
 import {libIds, libraries} from '../resources/libraries';
 import {ViewGalleryOfLibraries} from '../views/ViewGalleryOfLibraries';
@@ -39,6 +40,7 @@ export const AppHome = React.memo(() => {
 		if (!lib) {return <div/>;}
 		switch (lib.id) {
 			case libIds.muiLib:
+				return <LibMuiLibHome library={lib}/>;
 			case libIds.muiViews:
 				return <LibMuiViewsHome library={lib}/>;
 			default:

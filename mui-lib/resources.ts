@@ -14,14 +14,18 @@ const R_ZH: typeof R = {
 // Recourse > Bundle
 export const RB = {df: R, en: R, zh: R_ZH};
 
-export const libMuiViewsDemoPage = {
-	app: 'app',
-	data: 'data',
+export const libMuiLibDemoPage = {
+	dialogs: 'dialogs',
+	editors: 'editors',
+	layouts: 'layouts',
+	views: 'views',
+	widgets: 'widgets',
 };
 
-const page = libMuiViewsDemoPage;
+const page = libMuiLibDemoPage;
 
-export const libMuiViewsMenuPages = newMenuSection('demo', 'App-level Components', [
-	newMenuItem(page.app, 'App Components'),
-	newMenuItem(page.data, 'Data Displaying'),
+export const libMuiLibMenuPages = newMenuSection('demo', 'App-level Components', [
+	newMenuItem(page.dialogs, 'Dialogs'),
+	newMenuItem(page.editors, 'Editors'),
+	newMenuItem(page.widgets, 'Widgets'),
 ]);
