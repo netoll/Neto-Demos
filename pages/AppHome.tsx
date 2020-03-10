@@ -6,12 +6,15 @@ import {LayoutAppHeader} from 'src/mui-views/app/LayoutAppHeader';
 import {AppPageHeader} from 'src/mui-views/app/AppPageHeader';
 import {AppPageParagraph} from 'src/mui-views/app/AppPageParagraph';
 import {ViewGalleryOfLibraries} from '../views/ViewGalleryOfLibraries';
-import {libraries, RB} from './resources';
+import {LibMuiViewsHome} from '../mui-views/LibMuiViewsHome';
+import {IOpenLibrary, libIds, libraries, RB} from './resources';
 import {useStyles} from './styles';
 
 export const AppHome = React.memo(() => {
 	const cls = useStyles();
 	const R = useLocalizedResourcesFromContext(RB);
+
+	const [lib, setLib] = React.useState<IOpenLibrary>();
 
 	const renderAppBody = () => (
 		// <AppPageHeader title={R.headerAboutNetoDemos} secondary/>
@@ -27,10 +30,23 @@ export const AppHome = React.memo(() => {
 	);
 
 	const renderGalleryOfLibraries = () => (
-		<ViewGalleryOfLibraries libraries={libraries}/>
+		<ViewGalleryOfLibraries libraries={libraries} onSelect={setLib}/>
 	);
 
-	return (
+	const renderLibHome = () => {
+		if (!lib) {return <div/>;}
+		switch (lib.id) {
+			case libIds.muiLib:
+			case libIds.muiViews:
+				return <LibMuiViewsHome library={lib}/>;
+			default:
+				return <div>Unsupported Library!</div>;
+		}
+	};
+
+	return lib ? (
+		renderLibHome()
+	) : (
 		<LayoutAppHeader
 			title={R.title}
 			body={renderAppBody()}

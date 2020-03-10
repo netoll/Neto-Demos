@@ -21,6 +21,11 @@ const R_ZH: typeof R = {
 // Recourse > Bundle
 export const RB = {df: R, en: R, zh: R_ZH};
 
+export const libIds = {
+	muiViews: 'mui-views',
+	muiLib: 'mui-lib',
+};
+
 export interface IOpenLibrary {
 	id: string;
 	name: string;
@@ -32,9 +37,9 @@ const df = (id: string, name: string, github: string, site?: string): IOpenLibra
 	({id, name, github, site});
 
 const libs: IOpenLibrary[] = [
-	df('mui-lib', 'Mui-Lib', 'https://github.com/mui-lib/mui-lib',
+	df(libIds.muiLib, 'Mui-Lib', 'https://github.com/mui-lib/mui-lib',
 		''),
-	df('mui-views', 'Mui-Views', 'https://github.com/mui-lib/mui-views',
+	df(libIds.muiViews, 'Mui-Views', 'https://github.com/mui-lib/mui-views',
 		''),
 ];
 

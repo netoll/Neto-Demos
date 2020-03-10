@@ -11,15 +11,16 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
 
 interface IProps {
 	libraries: IOpenLibrary[]
+	onSelect: (lib: IOpenLibrary) => any;
 }
 
-export const ViewGalleryOfLibraries = React.memo(({libraries}: IProps) => {
+export const ViewGalleryOfLibraries = React.memo(({libraries, onSelect}: IProps) => {
 	const cls = useStyles();
 
 	return (
 		<div className={cls.root}>
 			{libraries.map(lib => (
-				<ViewCardOpenLibrary key={lib.id} lib={lib}/>
+				<ViewCardOpenLibrary key={lib.id} lib={lib} onClick={() => onSelect(lib)}/>
 			))}
 		</div>
 	);

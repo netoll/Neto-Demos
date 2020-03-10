@@ -13,13 +13,14 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
 
 interface IProps {
 	lib: IOpenLibrary;
+	onClick: React.MouseEventHandler;
 }
 
-export const ViewCardOpenLibrary = React.memo(({lib}: IProps) => {
+export const ViewCardOpenLibrary = React.memo(({lib, onClick}: IProps) => {
 	const cls = useStyles();
 
 	return (
-		<div className={cls.root}>
+		<div className={cls.root} onClick={onClick}>
 			<div>{lib.name}</div>
 			<div>{lib.github}</div>
 		</div>
