@@ -5,6 +5,7 @@ import {useLocalizedResourcesFromContext} from 'src/mui-lib/hooks/useLanguage';
 import {AppPageHeader} from 'src/mui-views/app/AppPageHeader';
 import {LayoutAppHeader} from 'src/mui-views/app/LayoutAppHeader';
 import {IMenuItem} from 'src/mui-views/app/AppSecondaryMenu';
+import {ViewGalleryOfDemoPages} from '../views/ViewGalleryOfDemoPages';
 import {VisNetworkDemos} from './VisNetworkDemos';
 import {AppMenuComponents} from '../components/AppMenuComponents';
 import {IOpenLibrary} from '../resources/library';
@@ -38,7 +39,7 @@ export const LibVisNetworkHome = React.memo<IProps>(({library}: IProps) => {
 
 	const page = libVisNetworkDemoPage;
 	const renderCompDemos = () => {
-		if (!comp) {return; }
+		if (!comp) {return renderGalleryOfDemoPages(); }
 		switch (comp?._id) {
 			case page.network:
 				return <VisNetworkDemos/>;
@@ -46,6 +47,10 @@ export const LibVisNetworkHome = React.memo<IProps>(({library}: IProps) => {
 				return;
 		}
 	};
+
+	const renderGalleryOfDemoPages = () => (
+		<ViewGalleryOfDemoPages pages={libVisNetworkMenuPages} onSelect={onSelectedComponent}/>
+	);
 
 	return (
 		<LayoutAppHeader

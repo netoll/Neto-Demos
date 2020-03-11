@@ -9,6 +9,7 @@ import {IMenuItem} from 'src/mui-views/app/AppSecondaryMenu';
 import {AppMenuComponents} from '../components/AppMenuComponents';
 import {IOpenLibrary} from '../resources/library';
 import {useStyles} from '../pages/styles';
+import {ViewGalleryOfDemoPages} from '../views/ViewGalleryOfDemoPages';
 import {libMuiLibMenuPages, libMuiLibDemoPage, RB} from './resources';
 
 interface IProps {
@@ -37,7 +38,7 @@ export const LibMuiLibHome = React.memo<IProps>(({library}: IProps) => {
 
 	const page = libMuiLibDemoPage;
 	const renderCompDemos = () => {
-		if (!comp) {return; }
+		if (!comp) {return renderGalleryOfDemoPages(); }
 		switch (comp?._id) {
 			case page.editors:
 				return <TestHome/>;
@@ -45,6 +46,10 @@ export const LibMuiLibHome = React.memo<IProps>(({library}: IProps) => {
 				return;
 		}
 	};
+
+	const renderGalleryOfDemoPages = () => (
+		<ViewGalleryOfDemoPages pages={libMuiLibMenuPages} onSelect={onSelectedComponent}/>
+	);
 
 	return (
 		<LayoutAppHeader

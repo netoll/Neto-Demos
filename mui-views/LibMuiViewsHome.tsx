@@ -5,6 +5,7 @@ import {useLocalizedResourcesFromContext} from 'src/mui-lib/hooks/useLanguage';
 import {AppPageHeader} from 'src/mui-views/app/AppPageHeader';
 import {LayoutAppHeader} from 'src/mui-views/app/LayoutAppHeader';
 import {IMenuItem} from 'src/mui-views/app/AppSecondaryMenu';
+import {ViewGalleryOfDemoPages} from '../views/ViewGalleryOfDemoPages';
 import {MuiViewsAppDemos} from './MuiViewsAppDemos';
 import {MuiViewsDataDemos} from './MuiViewsDataDemos';
 import {AppMenuComponents} from '../components/AppMenuComponents';
@@ -38,7 +39,7 @@ export const LibMuiViewsHome = React.memo<IProps>(({library}: IProps) => {
 
 	const page = libMuiViewsDemoPage;
 	const renderCompDemos = () => {
-		if (!comp) {return; }
+		if (!comp) {return renderGalleryOfDemoPages(); }
 		switch (comp?._id) {
 			case page.app:
 				return <MuiViewsAppDemos/>;
@@ -48,6 +49,10 @@ export const LibMuiViewsHome = React.memo<IProps>(({library}: IProps) => {
 				return;
 		}
 	};
+
+	const renderGalleryOfDemoPages = () => (
+		<ViewGalleryOfDemoPages pages={libMuiViewsMenuPages} onSelect={onSelectedComponent}/>
+	);
 
 	return (
 		<LayoutAppHeader
