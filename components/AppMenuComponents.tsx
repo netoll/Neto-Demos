@@ -1,11 +1,11 @@
 //
 
 import React from 'react';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import IconComponent from '@material-ui/icons/ClosedCaption';
+import {AppMenuIcon} from 'src/mui-views/app/AppMenuIcon';
 import {getAppSecondaryMenu, IMenuItem, IMenuSection} from 'src/mui-views/app/AppSecondaryMenu';
 
-const icon = <ListItemIcon style={{color: '#663399'}}><IconComponent/></ListItemIcon>;
+const icon = <AppMenuIcon color='#663399' icon={<IconComponent/>}/>;
 
 interface IProps {}
 

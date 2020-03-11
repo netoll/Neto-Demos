@@ -19,8 +19,9 @@ export const VisNetworkDemos = React.memo(({}: IProps) => {
 	React.useLayoutEffect(() => {
 		if (!domDiagramRootRef.current) {return;}
 		console.log('Drawing into domDiagramRoot:', domDiagramRootRef.current);
+		const vis: any = window['vis'];
 		// https://unpkg.com/vis-network/standalone/umd/vis-network.min.js
-		if (!window['vis']) {
+		if (!vis || !vis.Network) {
 			console.warn('Loading the depended script now!', new Date().toLocaleString());
 			loadScript('https://unpkg.com/vis-network/standalone/umd/vis-network.min.js').then(() => {
 				console.log('Successfully loaded the target script.', new Date().toLocaleString());

@@ -12,6 +12,7 @@ import {IOpenLibrary} from '../resources/library';
 import {useStyles} from '../pages/styles';
 import {libVisNetworkMenuPages, libVisNetworkDemoPage} from './resources';
 import {RB} from '../resources/resources';
+import {VisTimelineDemos} from './VisTimelinerDemos';
 
 interface IProps {
 	library?: IOpenLibrary;
@@ -43,6 +44,8 @@ export const LibVisNetworkHome = React.memo<IProps>(({library}: IProps) => {
 		switch (comp?._id) {
 			case page.network:
 				return <VisNetworkDemos/>;
+			case page.timeline:
+				return <VisTimelineDemos/>;
 			default:
 				return;
 		}
